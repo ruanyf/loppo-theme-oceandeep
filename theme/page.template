@@ -27,7 +27,7 @@
 
 <div class="columns breadcrumb">
   <div class="column is-half is-offset-1">
-    <% var breadcrumbArr = breadcrumb.forEach(function (item) { %>
+    <% breadcrumb = breadcrumb.map(function (item) { %>
       <% var path = Object.keys(item)[0]; %>
       <% if (path.substr(-3) === 'path.md')  path = path.substr(0, path.length - 3) + '.html' %>
       <% return '<a href="' + path + '" target="_blank">' + item[Object.keys(item)[0]] + '</a>'; %>
@@ -39,12 +39,12 @@
 <div class="columns content">
   <div class="column chapters is-2 is-offset-1">
     <ul>
-    <% var chaptersArr = chapters.forEach(function (item) { %>
+    <% chapters = chapters.map(function (item) { %>
       <% var path = Object.keys(item)[0]; %>
       <% if (path.substr(-3) === 'path.md')  path = path.substr(0, path.length - 3) + '.html' %>
       <% return '<li><a href="' + path + '" target="_blank">' + item[Object.keys(item)[0]] + '</a></li>'; %>
     <% }) %>
-    <%= chaptersArr.join('') %>
+    <%= chapters.join('') %>
     </ul>
   </div>
   <div class="column is-7">
