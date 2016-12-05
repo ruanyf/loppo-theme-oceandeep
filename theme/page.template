@@ -27,27 +27,18 @@
 
 <div class="columns breadcrumb">
   <div class="column is-half is-offset-1">
-    <% breadcrumb = breadcrumb.map(function (item) { %>
-      <% var path = Object.keys(item)[0]; %>
-      <% if (path.substr(-3) === 'path.md')  path = path.substr(0, path.length - 3) + '.html' %>
-      <% return '<a href="' + path + '" target="_blank">' + item[Object.keys(item)[0]] + '</a>'; %>
-    <% }) %>
-    <%= breadcrumbArr.join(' > ') %>
+    <%= breadcrumb %>
   </div>
 </div>
 
 <div class="columns content">
   <div class="column chapters is-2 is-offset-1">
     <ul>
-    <% chapters = chapters.map(function (item) { %>
-      <% var path = Object.keys(item)[0]; %>
-      <% if (path.substr(-3) === 'path.md')  path = path.substr(0, path.length - 3) + '.html' %>
-      <% return '<li><a href="' + path + '" target="_blank">' + item[Object.keys(item)[0]] + '</a></li>'; %>
-    <% }) %>
-    <%= chapters.join('') %>
+    <%= chapterList %>
     </ul>
   </div>
   <div class="column is-7">
+    <h1><%= page_title %></h1>
     <%= content %>
   </div>
   <div class="column is-2">
@@ -65,3 +56,4 @@
 <!-- Example: <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 </body>
 </html>
+
