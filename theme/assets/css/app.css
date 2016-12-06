@@ -1,3 +1,6 @@
+/*
+ * general
+ */
 :root {
   font-size: 16px;
   font-family: "FZLanTingHei", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Hiragino Kaku Gothic Pro", Meiryo, "Malgun Gothic", sans-serif;
@@ -5,25 +8,45 @@
 }
 
 body {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
+
+/*
+ *  navbar
+ */
 .navbar {
-  background-color: #2c3e50;
+  background-color: #3273dc;
   color: #FFF;
 }
 
 .logo {
-  font-size: 2.25rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+  margin-left: 1rem;
+}
+
+.logo a {
+  color: #FFF;
+}
+
+.logo a:hover {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .site-title {
-  text-align: left;
+  text-align: center;
 }
 
+/*
+ * breadcrumb
+ */
+
 .breadcrumb {
-  background-color: #2980b9;
-  color: #FFF;
+  background-color: #FFF;
+  color: #7f8c8d;
 }
 
 .content {
@@ -39,3 +62,4 @@ body {
   background-color: #2c3e50;
   color: #FFF;
 }
+
