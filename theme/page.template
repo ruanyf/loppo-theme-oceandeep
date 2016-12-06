@@ -25,12 +25,6 @@
   </div>
 </nav>
 
-<div class="columns breadcrumb">
-  <div class="column is-half is-offset-1">
-    <%= breadcrumb %>
-  </div>
-</div>
-
 <div class="columns content">
   <div class="column chapters is-2 is-offset-1">
     <ul>
@@ -38,6 +32,7 @@
     </ul>
   </div>
   <div class="column is-7">
+    <%= breadcrumb %>
     <h1><%= page_title %></h1>
     <%= content %>
   </div>
@@ -47,7 +42,7 @@
 </div>
 
 <div class="columns foot">
-  <div class="column is-2 is-offset-10">
+  <div class="column is-2 is-offset-10 build-by">
     Build by <strong>Loppo</strong>
   </div>
 </div>
