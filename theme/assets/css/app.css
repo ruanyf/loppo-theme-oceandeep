@@ -57,6 +57,11 @@ body {
   padding-left: 1rem;
 }
 
+.book-toc ul {
+  margin-top: 0;
+  margin-left: 1rem;
+}
+
 .index {
   background-color: rgb(245, 245, 245);
 }

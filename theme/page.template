@@ -26,10 +26,8 @@
 </nav>
 
 <div class="columns content">
-  <div class="column chapters is-2 is-offset-1">
-    <ul>
+  <div class="column chapters is-2 is-offset-1 book-toc">
     <%= chapterList %>
-    </ul>
   </div>
   <div class="column is-7">
     <%= breadcrumb %>
