@@ -43,13 +43,24 @@ code {
 }
 
 /*
- * breadcrumb
+ * show_navigation
+ */
+.show-navigation .button {
+  margin: 1rem;
+}
+
+/*
+ * Chapters
  */
 
-.breadcrumb {
-  background-color: #FFF;
-  color: #7f8c8d;
+.book-toc {
+  transition: all 1s;
 }
+
+.chapters {
+  margin-top: 1rem;
+}
+
 
 /*
  * content
@@ -66,10 +77,6 @@ code {
 .book-toc ul {
   margin-top: 0;
   margin-left: 1rem;
-}
-
-.index {
-  background-color: rgb(245, 245, 245);
 }
 
 /*

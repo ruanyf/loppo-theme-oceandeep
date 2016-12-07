@@ -25,8 +25,13 @@
   </div>
 </nav>
 
+<div class="columns show-navigation is-hidden-desktop">
+<a class="button is-primary s-info">Show Navigation</a>
+</div>
+
 <div class="columns content">
-  <div class="column chapters is-2 is-offset-1 book-toc">
+  <div class="column chapters is-2 is-offset-1 book-toc is-hidden-touch">
+    <p>Table of chapters</p>
     <%= chapterList %>
   </div>
   <div class="column is-7">
@@ -49,7 +54,7 @@
 <!-- SCRIPTS -->
 <script>
   var LOPPO = {};
-  LOPPO.article_toc = <%= JSON.stringify(toc) %>;
+  LOPPO.article_toc = <%= JSON.stringify(toc) %>
 </script>
 <script src="<%= relative_root_path %>assets/js/app.js"></script>
 </body>
