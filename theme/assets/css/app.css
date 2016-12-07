@@ -79,6 +79,16 @@ code {
   margin-left: 1rem;
 }
 
+.article-bar {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid #bdc3c7;
+  position: sticky;
+  bottom: 0;
+  background: white;
+}
+
 /*
  * article-toc
  */

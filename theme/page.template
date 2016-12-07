@@ -19,7 +19,7 @@
 
 <nav class="columns navbar">
   <div class="column logo is-3 is-offset-1">
-    <a class="is-brand" href="#">
+    <a class="is-brand" href="<%= relative_root_path %>index.html">
       <%= site %>
     </a>
   </div>
@@ -39,6 +39,17 @@
     <h1><%= page_title %></h1>
     <div class="article">
       <%= content %>
+    </div>
+    <div class="level article-bar is-mobile">
+      <div class="level-item has-text-centered">
+        <%= previous_page %>
+      </div>
+      <div class="level-item has-text-centered">
+        <a href="#">⤊ Top</a>
+      </div>
+      <div class="level-item has-text-centered">
+        <%= next_page %>
+      </div>
     </div>
   </div>
   <div class="column is-2">
