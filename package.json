@@ -9,6 +9,11 @@
   "keywords": [
     "loppo"
   ],
+  "homepage": "https://github.com/ruanyf/loppo-theme-oceandeep",
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/ruanyf/loppo-theme-oceandeep.git"
+  },
   "author": "Ruan Yifeng",
   "license": "mit"
 }
