@@ -30,11 +30,11 @@
 </div>
 
 <div class="columns content">
-  <div class="column chapters is-2 is-offset-1 book-toc is-hidden-touch">
+  <div class="column chapters is-2-desktop is-offset-1-widescreen book-toc is-hidden-touch">
     <p>Table of chapters</p>
     <%= chapterList %>
   </div>
-  <div class="column is-7">
+  <div class="column is-9-desktop is-7-widescreen">
     <%= breadcrumb %>
     <h1><%= page_title %></h1>
     <div class="article">
@@ -52,7 +52,7 @@
       </div>
     </div>
   </div>
-  <div class="column is-2">
+  <div class="column is-2-widescreen">
   </div>
 </div>
 
