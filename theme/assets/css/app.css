@@ -76,7 +76,33 @@ code {
 
 .book-toc ul {
   margin-top: 0;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
+}
+
+.book-toc ul.chapter-area {
+  counter-reset: chapter;
+}
+
+.book-toc ul.chapter-area > li {
+  list-style-type: none;
+}
+
+.book-toc ul.chapter-area > li::before {
+  counter-increment: chapter;
+  content: counter(chapter) ". ";
+}
+
+.book-toc ul.chapter-level-1 {
+  counter-reset: article;
+}
+
+.book-toc ul.chapter-level-1 > li {
+  list-style-type: none;
+}
+
+.book-toc ul.chapter-level-1 > li::before {
+  counter-increment: article;
+  content: counter(chapter) "." counter(article) " ";
 }
 
 .article-bar {
@@ -89,6 +115,28 @@ code {
   background: white;
 }
 
+.article {
+  counter-reset: firstLevelTitle;
+}
+
+.article > h2::before {
+  counter-increment: firstLevelTitle;
+  content: counter(firstLevelTitle) '. ';
+}
+
+.article > h2:only-of-type::before {
+  content: '';
+}
+
+.article > h2 {
+  counter-reset: secondLevelTitle;
+}
+
+.article > h3::before {
+  counter-increment: secondLevelTitle;
+  content: counter(firstLevelTitle) '.' counter(secondLevelTitle) ' ';
+}
+
 /*
  * article-toc
  */
@@ -98,6 +146,34 @@ code {
   background-color: #f9f9f9;
   display: table;
   padding: 1rem;
+}
+
+.article-toc ul {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.article-toc > ul {
+  counter-reset: articleTOCFirstLevel;
+}
+
+.article-toc > ul > li {
+  list-style-type: none;
+  counter-reset: articleTOCSecondLevel;
+}
+
+.article-toc > ul > li::before {
+  counter-increment: articleTOCFirstLevel;
+  content: counter(articleTOCFirstLevel) '. ';
+}
+
+.article-toc > ul > li > ul > li {
+  list-style-type: none;
+}
+
+.article-toc > ul > li > ul > li::before {
+  counter-increment: articleTOCSecondLevel;
+  content: counter(articleTOCFirstLevel) '.' counter(articleTOCSecondLevel) ' ';
 }
 
 /*
