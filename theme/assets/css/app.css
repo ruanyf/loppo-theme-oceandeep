@@ -57,6 +57,11 @@ code {
   transition: all 1s;
 }
 
+.book-toc .chapter-item.notification {
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+}
+
 .chapters {
   margin-top: 1rem;
 }

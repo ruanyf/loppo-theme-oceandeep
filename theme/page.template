@@ -18,7 +18,7 @@
 <body>
 
 <nav class="columns navbar">
-  <div class="column logo is-3 is-offset-1">
+  <div class="column logo is-2 is-offset-1">
     <a class="is-brand" href="<%= relative_root_path %>index.html">
       <%= site %>
     </a>
@@ -29,8 +29,8 @@
 <a class="button is-primary s-info">Show Navigation</a>
 </div>
 
-<div class="columns content">
-  <div class="column chapters is-2-desktop is-offset-1-widescreen book-toc is-hidden-touch">
+<div class="columns content is-large">
+  <div class="column chapters is-3-desktop is-2-widescreen is-offset-1-widescreen book-toc is-hidden-touch">
     <p>Table of chapters</p>
     <%= chapterList %>
   </div>
@@ -65,7 +65,8 @@
 <!-- SCRIPTS -->
 <script>
   var LOPPO = {};
-  LOPPO.article_toc = <%= JSON.stringify(toc) %>
+  LOPPO.current_path = '<%= current_path %>';
+  LOPPO.article_toc = <%= JSON.stringify(toc) %>;
 </script>
 <script src="<%= relative_root_path %>assets/js/app.js"></script>
 </body>
