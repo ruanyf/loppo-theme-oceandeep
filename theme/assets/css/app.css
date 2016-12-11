@@ -1,6 +1,7 @@
 /*
  * general
  */
+
 :root {
   font-size: 16px;
   font-family: "FZLanTingHei", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Hiragino Kaku Gothic Pro", Meiryo, "Malgun Gothic", sans-serif;
@@ -17,12 +18,17 @@ code {
   margin-right: 0.25rem;
 }
 
+
 /*
  *  navbar
  */
+
 .navbar {
   background-color: #3273dc;
   color: #FFF;
+  position: sticky;
+  top: 0;
+  height: 3.3125rem;
 }
 
 .logo {
@@ -42,41 +48,37 @@ code {
   text-align: center;
 }
 
-/*
- * show_navigation
- */
-.show-navigation .button {
-  margin: 1rem;
-}
 
 /*
- * Chapters
+ * book-toc
  */
 
 .book-toc {
+  position: fixed;
+  top: 3.3125rem;
+  right: 0;
+  opacity: 0.9;
   transition: all 1s;
+  color: rgba(0, 0, 0, 0.4);
+  line-height: 2;
 }
 
-.book-toc .chapter-item.notification {
-  margin-left: -1.25rem;
-  margin-right: -1.25rem;
+.book-toc h3 {
+  margin-bottom: 1.5rem;
 }
 
-.chapters {
-  margin-top: 1rem;
+.book-toc a {
+  color: rgba(0, 0, 0, 0.7);
 }
 
+.book-toc a:hover {
+  color: rgba(0, 0, 0, 0.9);
+  text-decoration: underline;
+}
 
-/*
- * content
- */
-
-.content {
-  background-color: #FFF;
-  color: #333;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  line-height: 1.6;
+.book-toc .chapter-item-current a {
+  color: #ff3860;
+  font-weight: 700;
 }
 
 .book-toc ul {
@@ -111,15 +113,68 @@ code {
   content: counter(chapter) "." counter(article) " ";
 }
 
-.article-bar {
+.chapters {
   margin-top: 1rem;
+}
+
+
+/*
+ * content
+ */
+
+.content {
+  background-color: #FFF;
+  color: #333;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  line-height: 1.6;
+}
+
+.breadcrumb-area {
   padding-top: 1rem;
-  padding-bottom: 1rem;
+}
+
+h1.article-title {
+  margin-bottom: 3rem;
+}
+
+.article-bar {
+  margin-top: 3rem;
+  padding-top: 1rem;
   border-top: 1px solid #bdc3c7;
   position: sticky;
   bottom: 0;
   background: white;
 }
+
+.article-bar .icon-next {
+  content: url(next.svg);
+}
+
+.article-bar .icon-previous {
+  content: url(previous.svg);
+}
+
+.article-bar .icon-up {
+  content: url(up.svg);
+}
+
+.article-bar .icon-size {
+  content: url(size.svg);
+}
+
+.article-bar .icon-toc {
+  content: url(toc.svg);
+}
+
+.article-bar .level-item .link-content {
+  display: none;
+}
+
+
+/*
+ * article
+ */
 
 .article {
   counter-reset: firstLevelTitle;
@@ -188,8 +243,9 @@ code {
 
 .foot {
   background-color: #FFF;
-  color: black;
   border-top: 1px solid #bdc3c7;
+  color: #b86bff;
+  font-size: 0.9rem;
 }
 
 .build-by {

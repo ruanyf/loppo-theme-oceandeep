@@ -18,41 +18,56 @@
 <body>
 
 <nav class="columns navbar">
-  <div class="column logo is-2 is-offset-1">
+  <div class="column logo is-3 is-offset-1">
     <a class="is-brand" href="<%= relative_root_path %>index.html">
       <%= site %>
     </a>
   </div>
 </nav>
 
-<div class="columns show-navigation is-hidden-desktop">
-<a class="button is-primary s-info">Show Navigation</a>
+<div class="book-toc notification is-warning is-hidden">
+  <h3>Table of chapters &nbsp;<span class="title-close"><a class="button is-danger"> Close </a></span></h3>
+  <%= chapterList %>
 </div>
 
 <div class="columns content is-large">
-  <div class="column chapters is-3-desktop is-2-widescreen is-offset-1-widescreen book-toc is-hidden-touch">
-    <p>Table of chapters</p>
-    <%= chapterList %>
+  <div class="column is-2-desktop is-3-widescreen is-hidden-touch">
   </div>
-  <div class="column is-9-desktop is-7-widescreen">
+  <div class="column is-11-tablet is-8-desktop is-6-widescreen">
     <%= breadcrumb %>
-    <h1><%= page_title %></h1>
+    <h1 class="article-title"><%= page_title %></h1>
     <div class="article">
       <%= content %>
+      <% if (current_path === '/') { %>
+        <%= chapterList %>
+      <% } %>
     </div>
     <div class="level article-bar is-mobile">
       <div class="level-item has-text-centered">
         <%= previous_page %>
       </div>
       <div class="level-item has-text-centered">
-        <a href="#">⤊ Top</a>
+        <a title="font size" class="link-item link-item-size">
+          <span class="icon icon-size"></span>
+        </a>
+      </div>
+      <div class="level-item has-text-centered">
+        <a title="table of content" class="link-item link-item-toc">
+          <span class="icon icon-toc"></span>
+        </a>
+      </div>
+      <div class="level-item has-text-centered">
+        <a title="top" href="#">
+          <span class="icon icon-up"></span>
+          <span class="link-content">⤊ Top</span>
+        </a>
       </div>
       <div class="level-item has-text-centered">
         <%= next_page %>
       </div>
     </div>
   </div>
-  <div class="column is-2-widescreen">
+  <div class="column is-2-widescreen is-hidden">
   </div>
 </div>
 

@@ -7,15 +7,12 @@
   var footHeight =
     window.getComputedStyle(document.querySelector('.foot'))
     .getPropertyValue('height');
-  var showNavigationHeight =
-    window.getComputedStyle(document.querySelector('.show-navigation'))
-    .getPropertyValue('height');
   var minHeight = document.documentElement.clientHeight
     - parseInt(navbarHeight)
-    - parseInt(footHeight)
-    - (parseInt(showNavigationHeight) ? parseInt(showNavigationHeight) : 0);
+    - parseInt(footHeight);
   content.style.minHeight = minHeight + 'px';
 })();
+
 
 /* insert article's toc */
 (function () {
@@ -31,21 +28,32 @@
   }
 })();
 
-/* show_navigation */
+
+/* content font size */
 (function () {
-  var show_navigation_button = document.querySelector('.show-navigation .button');
-  if (show_navigation_button) {
-    show_navigation_button.onclick = function (e) {
-      if (show_navigation_button.textContent === 'Show Navigation') {
-        show_navigation_button.textContent = 'Hide Navigation';
-      } else {
-        show_navigation_button.textContent = 'Show Navigation';
-      }
-      var book_toc = document.querySelector('.book-toc');
-      book_toc.style.borderBottom = '1px solid #dbdbdb';
-      var classList = book_toc.classList;
-      classList.toggle('is-hidden-touch');
-    }
-  }
+  var content = document.querySelector('.content');
+  var sizeArr = ['is-medium', null, 'is-large'];
+  var currentSize = 2;
+  var switcher = document.querySelector('.article-bar .level-item .link-item-size');
+  switcher.onclick = function (e) {
+    content.classList.remove(sizeArr[currentSize]);
+    currentSize += 1;
+    if (currentSize > 2) currentSize -= 3;
+    content.classList.add(sizeArr[currentSize]);
+  };
+})();
+
+
+/* toggle book toc */
+(function () {
+  var toc = document.querySelector('.book-toc');
+  var switcher = document.querySelector('.article-bar .level-item .link-item-toc');
+  switcher.onclick = function (e) {
+    toc.classList.toggle('is-hidden');
+  };
+  var closeButton = toc.querySelector('.title-close');
+  closeButton.onclick = function (e) {
+    toc.classList.toggle('is-hidden');
+  };
 })();
 
