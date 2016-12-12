@@ -57,3 +57,24 @@
   };
 })();
 
+
+/* toggle first level directory */
+(function () {
+  var firstLevelDir = document.querySelectorAll('.book-toc .chapter-level-1:not(.chapter-level-1-current)');
+  firstLevelDirArr = Array.prototype.slice.call(firstLevelDir);
+  firstLevelDirArr.forEach(function (i) {
+    i.classList.add('is-hidden');
+  });
+
+  var firstLevelCollapse = document.querySelectorAll('.book-toc .first-level-collapse');
+  firstLevelCollapseArr = Array.prototype.slice.call(firstLevelCollapse);
+  firstLevelCollapseArr.forEach(function (i) {
+    i.onclick = function (e) {
+      e.currentTarget.parentElement.nextSibling.classList.toggle('is-hidden');
+      const icon = i.querySelector('.icon');
+      icon.classList.toggle('icon-expand');
+      icon.classList.toggle('icon-collapse');
+    };
+  });
+})();
+

@@ -61,6 +61,10 @@ code {
   transition: all 1s;
   color: rgba(0, 0, 0, 0.4);
   line-height: 2;
+  height: 75vh;
+  width: 20rem;
+  overflow: scroll;
+  z-index: 9;
 }
 
 .book-toc h3 {
@@ -113,10 +117,23 @@ code {
   content: counter(chapter) "." counter(article) " ";
 }
 
+.book-toc .icon-expand {
+  width: 18px;
+  height: 18px;
+  content: url(expand.svg);
+}
+
+.book-toc .icon-collapse {
+  width: 18px;
+  height: 18px;
+  content: url(collapse.svg);
+}
+
+/*
 .chapters {
   margin-top: 1rem;
 }
-
+*/
 
 /*
  * content
