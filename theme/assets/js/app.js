@@ -33,7 +33,7 @@
 (function () {
   var content = document.querySelector('.content');
   var sizeArr = ['is-medium', null, 'is-large'];
-  var currentSize = 2;
+  var currentSize = 1;
   var switcher = document.querySelector('.article-bar .level-item .link-item-size');
   switcher.onclick = function (e) {
     content.classList.remove(sizeArr[currentSize]);
@@ -76,5 +76,47 @@
       icon.classList.toggle('icon-collapse');
     };
   });
+})();
+
+
+/* sticky article bar */
+(function () {
+  var article = document.querySelector('.article-container');
+  var bar = document.querySelector('.article-bar');
+  var foot = document.querySelector('.foot');
+
+  var placeholder = document.createElement('div');
+  var barWidth = bar.getClientRects()[0].width;
+  var barHeight = bar.getClientRects()[0].height;
+  placeholder.style.width = barWidth + 'px';
+  placeholder.style.height = barHeight + 'px';
+  var isAdded = false;
+
+  function throttle(f) {
+    var mark = Date.now();
+    return function () {
+      var now = Date.now();
+      if ((now - mark) < 300) return;
+      mark = now;
+      f();
+    };
+  }
+
+  function toggleSticky() {
+    if (!isAdded && foot.getBoundingClientRect().top > (document.documentElement.clientHeight + barHeight)) {
+      isAdded = true;
+      article.insertBefore(placeholder, bar);
+      bar.classList.add('sticky');
+      bar.style.width = '100%';
+      bar.style.left = 0;
+    } else if (isAdded && foot.getBoundingClientRect().top <= (document.documentElement.clientHeight + barHeight)) {
+      article.removeChild(placeholder);
+      bar.classList.remove('sticky');
+      isAdded = false;
+    }
+  }
+
+  toggleSticky();
+  window.addEventListener('scroll', throttle(toggleSticky));
 })();
 
