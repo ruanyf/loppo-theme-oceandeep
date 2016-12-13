@@ -74,20 +74,48 @@
       const icon = i.querySelector('.icon');
       icon.classList.toggle('icon-expand');
       icon.classList.toggle('icon-collapse');
+      insert_icon_image('expand');
+      insert_icon_image('collapse');
     };
   });
 })();
 
 
+/* insert icon image */
+function insert_icon_image(iconName) {
+  if (iconName === undefined) {
+    var icons = document.querySelectorAll('.icon');
+  } else {
+    var icons = document.querySelectorAll('.icon-' + iconName);
+  }
+  var iconsArr = Array.prototype.slice.call(icons);
+  iconsArr.forEach(function (i) {
+    var imgOld = i.querySelector('img');
+    if (imgOld) i.removeChild(imgOld);
+    var img = document.createElement('img');
+    if (iconName === undefined) {
+      img.src = LOPPO.relative_root_path + 'assets/css/' + i.dataset.icon + '.svg';
+    } else {
+      img.src = LOPPO.relative_root_path + 'assets/css/' + iconName + '.svg';
+    }
+    i.appendChild(img);
+  });
+}
+insert_icon_image();
+
+
 /* sticky article bar */
 (function () {
   var article = document.querySelector('.article-container');
+  var articleWidth = article.getBoundingClientRect().width;
   var bar = document.querySelector('.article-bar');
+  bar.style.width = articleWidth + 'px';
   var foot = document.querySelector('.foot');
 
   var placeholder = document.createElement('div');
   var barWidth = bar.getClientRects()[0].width;
   var barHeight = bar.getClientRects()[0].height;
+  foot.style.height = barHeight + 'px';
   placeholder.style.width = barWidth + 'px';
   placeholder.style.height = barHeight + 'px';
   var isAdded = false;
@@ -103,17 +131,18 @@
   }
 
   function toggleSticky() {
-    if (!isAdded && foot.getBoundingClientRect().top > (document.documentElement.clientHeight + barHeight)) {
+    setTimeout(function () {
+    var footTop = foot.getBoundingClientRect().top;
+    if (!isAdded && footTop > (document.documentElement.clientHeight + barHeight + 10)) {
       isAdded = true;
       article.insertBefore(placeholder, bar);
       bar.classList.add('sticky');
-      bar.style.width = '100%';
-      bar.style.left = 0;
-    } else if (isAdded && foot.getBoundingClientRect().top <= (document.documentElement.clientHeight + barHeight)) {
+    } else if (isAdded && footTop <= (document.documentElement.clientHeight + barHeight + 10)) {
       article.removeChild(placeholder);
       bar.classList.remove('sticky');
       isAdded = false;
     }
+    }, 0);
   }
 
   toggleSticky();

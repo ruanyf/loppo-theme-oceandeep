@@ -48,17 +48,17 @@
       </div>
       <div class="level-item has-text-centered">
         <a title="font size" class="link-item link-item-size">
-          <span class="icon icon-size"></span>
+          <span class="icon icon-size" data-icon="size"></span>
         </a>
       </div>
       <div class="level-item has-text-centered">
         <a title="table of content" class="link-item link-item-toc">
-          <span class="icon icon-toc"></span>
+          <span class="icon icon-toc" data-icon="toc"></span>
         </a>
       </div>
       <div class="level-item has-text-centered">
         <a title="top" href="#">
-          <span class="icon icon-up"></span>
+          <span class="icon icon-up" data-icon="up"></span>
           <span class="link-content">⤊ Top</span>
         </a>
       </div>
@@ -76,11 +76,11 @@
     Build by Loppo <%= loppo_version %>
   </div>
 </div>
-
 <!-- SCRIPTS -->
 <script>
   var LOPPO = {};
   LOPPO.current_path = '<%= current_path %>';
+  LOPPO.relative_root_path = '<%= relative_root_path %>';
   LOPPO.article_toc = <%= JSON.stringify(toc) %>;
 </script>
 <script src="<%= relative_root_path %>assets/js/app.js"></script>

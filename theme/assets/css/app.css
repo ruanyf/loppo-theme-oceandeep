@@ -164,13 +164,15 @@ h1.article-title {
   margin-right: 0;
   padding-left: 0;
   padding-right: 0;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   margin-bottom: 0px;
 }
 
 .article-bar {
   margin-top: 3rem;
   padding-top: 1rem;
+  margin-left: -10px;
+  margin-right: -10px;
   border-top: 1px solid #bdc3c7;
   position: -webkit-sticky;
   position: sticky;
@@ -229,6 +231,9 @@ h1.article-title {
   content: counter(firstLevelTitle) '.' counter(secondLevelTitle) ' ';
 }
 
+.article .first-level-collapse {
+  display: none;
+}
 
 /*
  * article-toc
@@ -279,6 +284,10 @@ h1.article-title {
   border-top: 1px solid #bdc3c7;
   color: #b86bff;
   font-size: 0.9rem;
+}
+
+.columns.foot {
+  margin-bottom: 0;
 }
 
 .build-by {
