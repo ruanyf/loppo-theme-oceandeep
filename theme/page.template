@@ -6,7 +6,7 @@
 <title><%= current_path === '/' ? '' : page_title + ' - ' %><%= site %></title>
 <meta name="description" content="">
 <meta name="author" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
 <link rel="stylesheet" href="<%= relative_root_path %>assets/css/bulma.min.css">
 <link rel="stylesheet" href="<%= relative_root_path %>assets/css/app.css">
 <!--[if lt IE 9]>
