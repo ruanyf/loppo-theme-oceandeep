@@ -78,6 +78,8 @@
   <%= chapterList %>
 </div>
 
+<div class="progress-indicator"></div>
+
 <% includes scripts %>
 </body>
 </html>
