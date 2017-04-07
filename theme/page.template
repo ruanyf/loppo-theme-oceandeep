@@ -15,7 +15,7 @@
 <![endif]-->
 <link rel="shortcut icon" href="">
 </head>
-<body>
+<body dir="<%= direction %>">
 
 <nav class="columns navbar">
   <div class="column logo is-3 is-offset-1">
@@ -38,7 +38,7 @@
         <%= chapterList %>
       <% } %>
     </div>
-    <div class="level article-bar is-mobile">
+    <div  dir="ltr" class="level article-bar is-mobile">
       <div class="level-item has-text-centered">
         <%= previous_page %>
       </div>
