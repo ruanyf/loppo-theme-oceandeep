@@ -328,6 +328,7 @@ h1.article-title {
 .hljs code {
   background: #23241f;
   color: #f8f8f2;
+  direction: ltr;
 }
 
 /*
